@@ -52,27 +52,36 @@ var losses = 0
 
 //------
 $("#crystal-1").on("click", function(){
-    console.log("red is " + crystalNumber1)
+    console.log("red is " + crystalNumber1);
 });
 //--------
 $("#crystal-2").on("click", function(){
-    console.log("blue is " + crystalNumber2)
-
+    console.log("blue is " + crystalNumber2);
 });
-
-
 //--------
 $("#crystal-3").on("click", function(){
-    console.log("green is " + crystalNumber3)
-
+    console.log("green is " + crystalNumber3);
 });
 //--------
 $("#crystal-4").on("click", function(){
-    console.log("purple is " + crystalNumber4)
-
+    console.log("purple is " + crystalNumber4);
+    crystalNumber4+gatheredCrystals
 });
 
-//---------------------------
+//______________________________________________
+
+
+
+
+function gathering() {
+    if (gatheredCrystals > goalNumber){
+        losses++
+        alert ("YOU LOSE");
+        console.log(losses)
+
+    }
+
+}
 
 
 
