@@ -1,0 +1,14 @@
+body {
+    background-color: teal;
+}
+
+#instructions {
+    border: 1px solid purple;
+    margin: 10px;
+    width: 200px;
+}
+
+#crystals {
+height: 200px;
+
+}
