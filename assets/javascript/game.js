@@ -34,38 +34,52 @@ $(document).ready(function(){
 //--------Variables----------------
 
 
-var crystals = ["red", "blue", "green", "purple" ] //No clue what this is for yet
+var crystals = ["blue", "green", "orange", "red" ] //No clue what this is for yet
+
+//What the player needs to get up to.
 var goalNumber = Math.floor((Math.random() * 101)+19);
 
-//there's got to be a better way!
-var crystalNumber1 = Math.floor((Math.random() * 11)+1);
-var crystalNumber2 = Math.floor((Math.random() * 11)+1);
-var crystalNumber3 = Math.floor((Math.random() * 11)+1);
-var crystalNumber4 = Math.floor((Math.random() * 11)+1);
+//This generates crystal numbers! 
+var crystalNumbers = [];
+while (crystalNumbers.length < 4){
+    var randomNumber = Math.floor((Math.random() * 12) +1);    
+    if (crystalNumbers.indexOf(randomNumber) >-1) continue;
+    crystalNumbers[crystalNumbers.length] = randomNumber;
+}
+console.log (crystalNumbers)
 
+blueCrystal = crystalNumbers[0];
+greenCrystal = crystalNumbers[1];
+orangeCrystal = crystalNumbers[2];
+redCrystal = crystalNumbers[3];
 
 var gatheredCrystals = 0
 var wins = 0
 var losses = 0
 
+//the HTML text.
+$('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
+                        + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
+$('#userScore').html("Wins: " + wins + "<br>" + "Losses: " + losses)
+
 //------CRYSTALS----------------------
 
 //------
 $("#crystal-1").on("click", function(){
-    console.log("red is " + crystalNumber1);
+    console.log("blue is " + blueCrystal);
 });
 //--------
 $("#crystal-2").on("click", function(){
-    console.log("blue is " + crystalNumber2);
+    console.log("green is " + greenCrystal);
 });
 //--------
 $("#crystal-3").on("click", function(){
-    console.log("green is " + crystalNumber3);
+    console.log("orange is " + orangeCrystal);
 });
 //--------
 $("#crystal-4").on("click", function(){
-    console.log("purple is " + crystalNumber4);
-    crystalNumber4+gatheredCrystals
+    console.log("red is " + redCrystal);
+
 });
 
 //______________________________________________

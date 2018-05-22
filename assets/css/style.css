@@ -1,14 +1,41 @@
 body {
-    background-color: teal;
+    background-color: rgb(17, 14, 20);
+}
+
+h1 {
+    color: rgba(18, 233, 233, 0.986);
 }
 
 #instructions {
+    color: wheat;
     border: 1px solid purple;
     margin: 10px;
-    width: 200px;
+    width: 400px;
+    text-align: center;
 }
 
 #crystals {
-height: 200px;
+    margin: 10px;
+    padding: 5px;
+}
 
+#numberLimit {
+    padding: 5px;
+    color: white;
+    border: 1px solid goldenrod;
+    margin: 10px;
+    width: 200px;
+
+
+}
+
+#userScore {
+    color: whitesmoke;
+    float: left;
+    border: 1px solid pink;
+    margin: 10px;
+    padding: 5px;
+    width: 75px;
+
+    
 }
