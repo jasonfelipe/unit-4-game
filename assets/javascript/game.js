@@ -71,7 +71,7 @@ $("#crystal-4").on("click", function(){
 //______________________________________________
 
 
-
+//-------Game Logic----------------------
 
 function gathering() {
     if (gatheredCrystals > goalNumber){
