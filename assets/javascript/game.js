@@ -37,7 +37,8 @@ $(document).ready(function(){
 var crystals = ["blue", "green", "orange", "red" ] //No clue what this is for yet
 
 //What the player needs to get up to.
-var goalNumber = Math.floor((Math.random() * 101)+19);
+var goalNumber = Math.floor((Math.random() * 100)+20);
+console.log(goalNumber)
 
 //This generates crystal numbers! 
 var crystalNumbers = [];
@@ -46,7 +47,6 @@ while (crystalNumbers.length < 4){
     if (crystalNumbers.indexOf(randomNumber) >-1) continue;
     crystalNumbers[crystalNumbers.length] = randomNumber;
 }
-console.log (crystalNumbers)
 
 blueCrystal = crystalNumbers[0];
 greenCrystal = crystalNumbers[1];
