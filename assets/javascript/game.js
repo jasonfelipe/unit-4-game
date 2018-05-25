@@ -53,6 +53,7 @@ greenCrystal = crystalNumbers[1];
 orangeCrystal = crystalNumbers[2];
 redCrystal = crystalNumbers[3];
 
+
 var gatheredCrystals = 0
 var wins = 0
 var losses = 0
@@ -67,19 +68,35 @@ $('#userScore').html("Wins: " + wins + "<br>" + "Losses: " + losses)
 //------
 $("#crystal-1").on("click", function(){
     console.log("blue is " + blueCrystal);
+    gatheredCrystals = blueCrystal + gatheredCrystals
+    gathering();
+    $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
+    + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
+    gathering();
 });
 //--------
 $("#crystal-2").on("click", function(){
     console.log("green is " + greenCrystal);
+    gatheredCrystals = greenCrystal + gatheredCrystals
+    $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
+    + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
+    gathering();
 });
 //--------
 $("#crystal-3").on("click", function(){
     console.log("orange is " + orangeCrystal);
+    gatheredCrystals = orangeCrystal     + gatheredCrystals
+    $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
+    + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
+    gathering();
 });
 //--------
 $("#crystal-4").on("click", function(){
     console.log("red is " + redCrystal);
-
+    gatheredCrystals = redCrystal + gatheredCrystals
+    $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
+    + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
+    gathering();
 });
 
 //______________________________________________
@@ -89,15 +106,45 @@ $("#crystal-4").on("click", function(){
 
 function gathering() {
     if (gatheredCrystals > goalNumber){
-        losses++
+        losses++;
         alert ("YOU LOSE");
-        console.log(losses)
-
+        $('#userScore').html("Wins: " + wins + "<br>" + "Losses: " + losses);
+        reset();
     }
 
+    else if (gatheredCrystals === goalNumber){
+        wins++;
+        alert ("YOU WIN!");
+        $('#userScore').html("Wins: " + wins + "<br>" + "Losses: " + losses);
+        reset();
+    }
 }
 
+//------RESETING THE GAME------------------
+function reset() {
 
+    var crystalNumbers = [];
+    var gatheredCrystals = 0
+    var goalNumber = Math.floor((Math.random() * 100)+20);
+
+    console.log(gatheredCrystals)
+    
+    
+    while (crystalNumbers.length < 4){
+    var randomNumber = Math.floor((Math.random() * 12) +1);    
+    if (crystalNumbers.indexOf(randomNumber) >-1) continue;
+    crystalNumbers[crystalNumbers.length] = randomNumber;
+}
+
+    blueCrystal = crystalNumbers[0];
+    greenCrystal = crystalNumbers[1];
+    orangeCrystal = crystalNumbers[2];
+    redCrystal = crystalNumbers[3];
+
+    $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
+    + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
+
+}
 
 
 
