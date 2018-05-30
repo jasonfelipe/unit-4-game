@@ -107,7 +107,7 @@ $("#crystal-4").on("click", function(){
 function gathering() {
     if (gatheredCrystals > goalNumber){
         losses++;
-        alert ("YOU LOSE");
+        alert ("YOU LOSE!");
         $('#userScore').html("Wins: " + wins + "<br>" + "Losses: " + losses);
         reset();
     }
@@ -123,23 +123,25 @@ function gathering() {
 //------RESETING THE GAME------------------
 function reset() {
 
-    var crystalNumbers = [];
-    var gatheredCrystals = 0
     var goalNumber = Math.floor((Math.random() * 100)+20);
+    var gatheredCrystals = 0
 
+    console.log(goalNumber)
     console.log(gatheredCrystals)
     
-    
+    var crystalNumbers = [];
     while (crystalNumbers.length < 4){
-    var randomNumber = Math.floor((Math.random() * 12) +1);    
-    if (crystalNumbers.indexOf(randomNumber) >-1) continue;
-    crystalNumbers[crystalNumbers.length] = randomNumber;
-}
-
+        var randomNumber = Math.floor((Math.random() * 12) +1);    
+        if (crystalNumbers.indexOf(randomNumber) >-1) continue;
+        crystalNumbers[crystalNumbers.length] = randomNumber;
+    }
+    
     blueCrystal = crystalNumbers[0];
     greenCrystal = crystalNumbers[1];
     orangeCrystal = crystalNumbers[2];
     redCrystal = crystalNumbers[3];
+    
+    
 
     $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
     + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
