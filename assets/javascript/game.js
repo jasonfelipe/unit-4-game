@@ -67,16 +67,13 @@ $('#userScore').html("Wins: " + wins + "<br>" + "Losses: " + losses)
 
 //------
 $("#crystal-1").on("click", function(){
-    console.log("blue is " + blueCrystal);
     gatheredCrystals = blueCrystal + gatheredCrystals
-    gathering();
     $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
     + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
     gathering();
 });
 //--------
 $("#crystal-2").on("click", function(){
-    console.log("green is " + greenCrystal);
     gatheredCrystals = greenCrystal + gatheredCrystals
     $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
     + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
@@ -84,7 +81,6 @@ $("#crystal-2").on("click", function(){
 });
 //--------
 $("#crystal-3").on("click", function(){
-    console.log("orange is " + orangeCrystal);
     gatheredCrystals = orangeCrystal     + gatheredCrystals
     $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
     + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
@@ -92,7 +88,6 @@ $("#crystal-3").on("click", function(){
 });
 //--------
 $("#crystal-4").on("click", function(){
-    console.log("red is " + redCrystal);
     gatheredCrystals = redCrystal + gatheredCrystals
     $('#numberLimit').html( 'Gather this many crystals: ' + goalNumber
     + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
@@ -147,24 +142,6 @@ function reset() {
     + '<br>' + 'You have gathered: ' + gatheredCrystals + ' crystals!')
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
