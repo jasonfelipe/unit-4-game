@@ -119,10 +119,10 @@ function gathering() {
 function reset() {
 
     var goalNumber = Math.floor((Math.random() * 100)+20);
-    var gatheredCrystals = 0
+    gatheredCrystals = 0;
 
-    console.log(goalNumber)
-    console.log(gatheredCrystals)
+    console.log(goalNumber);
+    console.log(gatheredCrystals);
     
     var crystalNumbers = [];
     while (crystalNumbers.length < 4){
